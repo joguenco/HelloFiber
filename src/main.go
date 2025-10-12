@@ -26,6 +26,7 @@ func main() {
 	})
 
 	app.Get("/ping", handlers.GetPing)
+	app.Get("/version", handlers.GetVersion)
 
 	app.Listen(":" + PORT)
 }

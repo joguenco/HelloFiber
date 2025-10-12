@@ -20,6 +20,10 @@ Download air executable and copy in go PATH
 ```
 go install github.com/air-verse/air@latest
 ```
+or in ./bin folder
+```
+curl -sSfL https://raw.githubusercontent.com/air-verse/air/master/install.sh | sh -s -- -b $(go env GOPATH)/bin
+```
 - Initialize
 ```
 air init
@@ -44,4 +48,8 @@ go run src/main.go
 ## Hot Reload
 ```
 air
+```
+## Build
+```
+go build -o HelloFiber ./src/main.go
 ```
