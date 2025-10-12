@@ -29,6 +29,10 @@ Add ./srv in final of this line in .air.toml file
 ```
 cmd = "go build -o ./tmp/main ./src"
 ```
+- Loads env vars from a .env file
+```
+go get github.com/joho/godotenv
+```
 ## Formatter
 ```
 gofmt -w ./src 
