@@ -29,6 +29,10 @@ Add ./srv in final of this line in .air.toml file
 ```
 cmd = "go build -o ./tmp/main ./src"
 ```
+## Formatter
+```
+gofmt -w ./src 
+```
 ## Run
 ```
 go run src/main.go 
