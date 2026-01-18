@@ -37,13 +37,17 @@ cmd = "go build -o ./tmp/main ./src"
 ```
 go get github.com/joho/godotenv
 ```
+## Install dependencies
+```
+go mod tidy
+```
 ## Formatter
 ```
-gofmt -w ./src 
+gofmt -w ./src
 ```
 ## Run
 ```
-go run src/main.go 
+go run src/main.go
 ```
 ## Hot Reload
 ```
@@ -52,4 +56,14 @@ air
 ## Build
 ```
 go build -o HelloFiber ./src/main.go
+```
+## Database
+```
+CREATE ROLE hello_fiber WITH LOGIN NOSUPERUSER CREATEDB NOCREATEROLE INHERIT NOREPLICATION CONNECTION LIMIT -1 PASSWORD 'h'
+```
+```
+pgcli -U hello_fiber -d postgres -h localhost -W
+```
+```
+create database hello_fiber
 ```

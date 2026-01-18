@@ -1,6 +1,7 @@
 package main
 
 import (
+	"HelloFiber/src/database"
 	"HelloFiber/src/handlers"
 	"HelloFiber/src/util"
 	"log"
@@ -17,6 +18,8 @@ func main() {
 	}
 	PORT := os.Getenv("PORT")
 
+	database.ConnectPostgres()
+
 	app := fiber.New()
 
 	util.ConfigureLogger(app)
@@ -28,5 +31,6 @@ func main() {
 	app.Get("/ping", handlers.GetPing)
 	app.Get("/version", handlers.GetVersion)
 
+	log.Printf("Server is running on port %s\n", PORT)
 	app.Listen(":" + PORT)
 }
